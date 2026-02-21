@@ -1,0 +1,28 @@
+# Environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Type checking
+.mypy_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.astro/
+
+# Databricks
+.databricks/
+
+# OS
+.DS_Store
+Thumbs.db

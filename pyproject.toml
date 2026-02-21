@@ -1,0 +1,19 @@
+[project]
+name = "sat"
+version = "1.0.0"
+description = "A tool to analyze the security of a Databricks workspace"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "databricks-sdk>=0.90.0",
+    "databricks-sql-connector>=4.2.5",
+    "fastapi>=0.129.0",
+    "python-dotenv>=1.2.1",
+    "uvicorn>=0.41.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.0.2",
+]
