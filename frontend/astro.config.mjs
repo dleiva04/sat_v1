@@ -6,8 +6,7 @@ export default defineConfig({
   vite: {
     server: {
       proxy: {
-        "/setup": "http://localhost:8000",
-        "/state": "http://localhost:8000",
+        "/api": "http://localhost:8000",
       },
     },
   },

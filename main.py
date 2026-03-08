@@ -10,7 +10,7 @@ from backend.routes import routers
 app = FastAPI(title="SAT", version="1.0.0")
 
 for router in routers:
-    app.include_router(router)
+    app.include_router(router, prefix="/api")
 
 frontend_dist = os.path.join(os.path.dirname(__file__), "frontend", "dist")
 if os.path.isdir(frontend_dist):

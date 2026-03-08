@@ -2,11 +2,14 @@
 
 A web application for configuring and managing the Security Analysis Tool on Databricks workspaces.
 
+On first launch, a one-time setup wizard walks you through configuring the catalog, schema, tools to install, and compute type. Once setup is complete the app redirects to a dashboard with a sidebar navigation for accessing all sections: Overview, Tools (SAT Core, Permissions Analyzer, Secret Scanner), Security Checks, and Settings.
+
 ## Technologies
 
 - **FastAPI** — lightweight, high-performance Python web framework
 - **Uvicorn** — ASGI server to run the app
-- **Astro** — static-first frontend framework for the UI
+- **Astro + React** — static-first frontend framework with interactive islands
+- **Databricks SDK** — workspace client for jobs, secrets, and SQL
 
 ## Getting Started
 

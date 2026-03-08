@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation";
+import TopBar from "../components/TopBar";
+import Dashboard from "../components/Dashboard";
+---
+
+<Layout title="SAT – Dashboard">
+  <div class="app-shell">
+    <Navigation client:load current="/dashboard" />
+    <div class="app-content">
+      <TopBar client:load section="SAT" page="Overview" />
+      <main class="app-main">
+        <Dashboard client:load />
+      </main>
+    </div>
+  </div>
+</Layout>

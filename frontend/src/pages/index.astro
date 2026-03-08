@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import SetupForm from "../components/SetupForm";
 ---
 
-<Layout title="SAT – Install">
-  <SetupForm client:load />
+<Layout title="SAT – Setup">
+  <div class="setup-shell">
+    <SetupForm client:load />
+  </div>
 </Layout>

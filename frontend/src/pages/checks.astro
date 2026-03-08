@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation";
+import TopBar from "../components/TopBar";
+import SecurityChecks from "../components/SecurityChecks";
+---
+
+<Layout title="SAT – Security Checks">
+  <div class="app-shell">
+    <Navigation client:load current="/checks" />
+    <div class="app-content">
+      <TopBar client:load section="Manage" page="Security Checks" />
+      <main class="app-main">
+        <SecurityChecks client:load />
+      </main>
+    </div>
+  </div>
+</Layout>

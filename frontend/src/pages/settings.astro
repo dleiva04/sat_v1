@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation";
+import TopBar from "../components/TopBar";
+import Settings from "../components/Settings";
+---
+
+<Layout title="SAT – Settings">
+  <div class="app-shell">
+    <Navigation client:load current="/settings" />
+    <div class="app-content">
+      <TopBar client:load section="Manage" page="Settings" />
+      <main class="app-main">
+        <Settings client:load />
+      </main>
+    </div>
+  </div>
+</Layout>

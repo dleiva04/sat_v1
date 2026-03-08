@@ -1,0 +1,159 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  margin-bottom: 0.25rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1b3139;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Card grid ── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardWide {
+  grid-column: 1;
+}
+
+.cardHeader {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cardTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1b3139;
+}
+
+.cardBadge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #6b7280;
+  padding: 0.2rem 0.6rem;
+  background: #f3f4f6;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.cardHint {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.cardBody {
+  padding: 1.25rem;
+}
+
+/* ── Legend ── */
+
+.legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Table-like rows ── */
+
+.tableHeader {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tableHeader span {
+  flex: 1;
+}
+
+.tableRow {
+  display: flex;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #f9fafb;
+  font-size: 0.85rem;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.toolName {
+  flex: 1;
+  color: #1b3139;
+  font-weight: 500;
+}
+
+.toolStatus {
+  flex: 1;
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+/* ── Empty state ── */
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.emptyState p {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  max-width: 280px;
+  line-height: 1.5;
+}
