@@ -3,5 +3,5 @@ command:
   - 'run.sh'
 
 env:
-  - name: 'WAREHOUSE_ID'
+  - name: 'DATABRICKS_WAREHOUSE_ID'
     valueFrom: sql-warehouse

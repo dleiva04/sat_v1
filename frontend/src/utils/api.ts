@@ -1,6 +1,9 @@
+const BASE =
+  process.env.NODE_ENV === "development" ? "http://localhost:8000/api" : "/api";
+
 async function request(path: string, options?: RequestInit) {
   try {
-    const res = await fetch(`/api${path}`, options);
+    const res = await fetch(`${BASE}${path}`, options);
     return await res.json();
   } catch {
     return { status: "error", message: "Network error — is the backend running?" };

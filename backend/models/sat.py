@@ -18,6 +18,16 @@ class SetupRequest(BaseModel):
     tools: List[ToolType] = []
     compute: ComputeConfig = ComputeConfig()
 
+    client_id: Optional[str] = None
+    client_secret: Optional[str] = None
+    use_sp_auth: bool = False
+    use_app_credentials: bool = False
+    cloud_provider: Optional[str] = None
+    subscription_id: Optional[str] = None
+    tenant_id: Optional[str] = None
+    http_proxy: Optional[str] = None
+    https_proxy: Optional[str] = None
+
 
 class SettingsUpdateRequest(BaseModel):
     databricks_account_id: Optional[str] = None
@@ -30,6 +40,7 @@ class SettingsUpdateRequest(BaseModel):
 
 class SATState(BaseModel):
     is_configured: bool = False
+    cloud_provider: str = ""
     databricks_account_id: str = ""
     catalog: str = ""
     schema_name: str = ""

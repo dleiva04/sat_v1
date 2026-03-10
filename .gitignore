@@ -18,6 +18,8 @@ __pycache__/
 # Frontend
 frontend/node_modules/
 frontend/dist/
+frontend/out/
+frontend/.next/
 frontend/.astro/
 
 # Databricks

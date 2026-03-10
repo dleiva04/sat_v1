@@ -23,13 +23,23 @@ class _DatabricksClient:
         return self._secret_scope
 
     @property
+    def cloud_provider(self) -> str:
+        host = self._client.config.host or ""
+        if ".azuredatabricks.net" in host or ".azure." in host:
+            return "azure"
+        if ".gcp.databricks.com" in host:
+            return "gcp"
+        return "aws"
+
+    @property
     def source_code_path(self) -> str:
         if self._source_code_path is None:
             app_name = os.environ.get("DATABRICKS_APP_NAME")
             if not app_name:
                 raise ValueError("DATABRICKS_APP_NAME environment variable is not set")
             app = self._client.apps.get(name=app_name)
-            self._source_code_path = (app.default_source_code_path or "").rstrip("/")
+            print(f"App: {app}")
+            self._source_code_path = (app.active_deployment.source_code_path or "").rstrip("/")
         return self._source_code_path
 
     @property
@@ -41,6 +51,7 @@ class _DatabricksClient:
         if not is_configured:
             return SATState(
                 is_configured=False,
+                cloud_provider=self.cloud_provider,
                 catalog=catalog,
                 schema_name=schema_name,
             )
@@ -52,6 +63,7 @@ class _DatabricksClient:
         except Exception:
             return SATState(
                 is_configured=True,
+                cloud_provider=self.cloud_provider,
                 catalog=catalog,
                 schema_name=schema_name,
             )
@@ -78,6 +90,7 @@ class _DatabricksClient:
 
         return SATState(
             is_configured=True,
+            cloud_provider=self.cloud_provider,
             databricks_account_id=config.get("databricks_account_id", ""),
             catalog=catalog,
             schema_name=schema_name,
@@ -128,6 +141,12 @@ class _DatabricksClient:
 
     def create_secret(self, key: str, value: str) -> None:
         self.put_secret(key, value)
+
+    def delete_secret_scope(self) -> None:
+        try:
+            self._client.secrets.delete_scope(scope=self.secret_scope)
+        except Exception:
+            pass
 
 
 Databricks = _DatabricksClient()
